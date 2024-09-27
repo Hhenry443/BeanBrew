@@ -1,0 +1,6 @@
+<form class="w-1/2 text-center" method="post" action="/order/placeOrder.php">
+        <div class="mt-6">
+            <input type="submit" value="Order"
+                class="w-1/2 h-12 bg-[#D8903F] text-white font-bold rounded-xl text-center hover:bg-[#B3762D]">
+        </div>
+    </form>

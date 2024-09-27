@@ -1,0 +1,16 @@
+{
+    "name": "hhenry443/beanandbrew.php",
+    "description": "Cafe app",
+    "authors": [
+        {
+            "name": "Henry Barnes",
+            "email": "henrytbarnes07@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Framework\\": "Framework/",
+            "App\\": "App/"
+        }
+    }
+}
