@@ -5,7 +5,6 @@ if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 
-
 require '../../App/partials/db.php';
 
 try {
@@ -16,23 +15,19 @@ try {
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // Get the submitted form data
+        $username = $_POST['username'];
+        $comment = $_POST['comment'];
+        $postID = $_POST['postID'];
 
-        $eventID = intval($_POST['event_id']);
-        $name = $_POST['name'];
-        $email = $_POST['email'];
-        $guests = intval($_POST['guests']);
-        $userID = $_POST['userID']; // from hidden input
 
         // Prepare an SQL statement to insert the data
-        $stmt = $pdo->prepare("INSERT INTO tbl_lesson_booking (eventID, userID, name, email, guests) 
-                               VALUES (:eventID, :userID, :name, :email, :guests)");
+        $stmt = $pdo->prepare("INSERT INTO tbl_comments (postID, username, comment) 
+                               VALUES (:postID, :username, :comment)");
 
         // Bind parameters to the query
-        $stmt->bindParam(':eventID', $eventID);
-        $stmt->bindParam(':userID', $userID);
-        $stmt->bindParam(':name', $name);
-        $stmt->bindParam(':email', $email);
-        $stmt->bindParam(':guests', $guests);
+        $stmt->bindParam(':username', $username);
+        $stmt->bindParam(':comment', $comment);
+        $stmt->bindParam(':postID', $postID);
 
 
         // Execute the statement
@@ -40,10 +35,10 @@ try {
             // Get the ID of the last inserted row
             $lastInsertId = $pdo->lastInsertId();
 
-            echo "Booking successfully inserted!";
+            echo "Comment successfully inserted!";
 
             // Redirect to the booking confirmation page
-            redirect('/lessonBooking.php?id=' . $lastInsertId);
+            redirect('/post.php?id=' . $postID);
         } else {
             echo "Failed to insert booking.";
         }

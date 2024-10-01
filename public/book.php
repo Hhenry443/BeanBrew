@@ -87,8 +87,6 @@ require './lessons/getLessons.php';
                         <div id="availabilityMessage" class="mt-2 text-sm"></div>
                     </div>
 
-
-
                     <!-- Time -->
                     <div>
                         <label for="time" class="block text-sm font-medium text-gray-700">Time</label>
@@ -139,13 +137,10 @@ require './lessons/getLessons.php';
                             <div class="absolute bottom-0 left-0 w-full h-1/3 bg-gray-100 transform translate-y-full transition-transform duration-300 ease-in-out group-hover:translate-y-0 flex flex-col items-center">
                                 <div class="mt-4 text-gray-900 font-bold"><?= $lesson['title'] ?></div>
                                 <div class="mt-2 text-gray-900 font-semibold text-center"><?= $lesson['short_description'] ?></div>
-
                             </div>
                         </div>
                     </a>
                 <?php endforeach; ?>
-
-
             </div>
 
 

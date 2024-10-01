@@ -13,10 +13,10 @@ try {
     // Set error mode to exception to catch errors
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    // Fetch all lessons from the database
-    $stmt = $pdo->prepare("SELECT * FROM tbl_lessons");
+    // Fetch all posts from the database
+    $stmt = $pdo->prepare("SELECT * FROM tbl_posts");
     $stmt->execute();
-    $lessons = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $posts = $stmt->fetchAll(PDO::FETCH_ASSOC);
 } catch (PDOException $e) {
     echo "Connection failed: " . $e->getMessage();
 }

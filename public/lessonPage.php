@@ -17,6 +17,7 @@ require './lessons/fetchSingleLesson.php'; // This will now load the $product va
 // Load events from getEvents
 $events = require './events/getEvents.php'; // Ensure this returns an associative array of events
 
+
 // Initialize variables
 $filteredEvents = [];
 $selectedLocation = '';

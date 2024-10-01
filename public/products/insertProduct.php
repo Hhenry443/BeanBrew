@@ -1,8 +1,5 @@
 <?php
-// Database connection details
-$dsn = 'mysql:host=localhost;dbname=beanandbrew'; // Update with your DB name
-$username = 'henry';
-$password = '';
+require '../App/partials/db.php';
 
 $message = '';
 

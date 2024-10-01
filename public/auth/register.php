@@ -5,15 +5,7 @@ if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 
-// Database connection parameters
-$host = 'localhost'; // Change if necessary
-$db   = 'beanandbrew'; // Your database name
-$user = 'henry'; // Your database username
-$pass = ''; // Your database password
-$charset = 'utf8mb4';
-
-// Set up the DSN (Data Source Name)
-$dsn = "mysql:host=$host;dbname=$db;charset=$charset";
+require '../../App/partials/db.php';
 
 try {
     // Create a PDO instance

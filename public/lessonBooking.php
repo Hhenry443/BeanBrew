@@ -7,7 +7,7 @@ if (session_status() == PHP_SESSION_NONE) {
 }
 
 require '../helpers.php';
-require './booking/getLessonBooking.php';
+require './lessons/getLessonBooking.php';
 
 if ($_SESSION['userID'] != $booking['userID']) {
     redirect('/');
@@ -34,10 +34,8 @@ if ($_SESSION['userID'] != $booking['userID']) {
     <div class="relative bg-white shadow-lg p-4 w-2/5 rounded-lg text-center mt-32 transform rotate-2 hover:rotate-0 transition duration-300 ease-in-out">
         <img src="/images/booking_confirmation.jpg" alt="Booking Confirmation" class="rounded-md mb-4 object-cover w-full">
         <div class="text-gray-800 text-lg font-mono">
-            <p class="font-bold text-xl"><?= htmlspecialchars($booking['name']) ?></p>
-            <p><?= htmlspecialchars($booking['date']) ?> at <?= htmlspecialchars($booking['time']) ?></p>
-            <p><?= htmlspecialchars($booking['location']) ?></p>
-            <p>Guests: <?= htmlspecialchars($booking['number_of_guests']) ?></p>
+            <p class="font-bold text-xl">Booking Confirmed!</p>
+            <p>Guests: <?= htmlspecialchars($booking['guests']) ?></p>
         </div>
     </div>
 

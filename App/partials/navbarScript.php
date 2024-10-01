@@ -15,7 +15,7 @@
     };
 
     document.getElementById("socialNavButton").onclick = function() {
-        location.href = "/rate-my-cake.php";
+        location.href = "/ratemycake.php";
     };
 
     document.getElementById("homeNavButton").onclick = function() {
