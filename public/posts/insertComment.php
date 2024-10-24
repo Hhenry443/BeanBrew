@@ -5,7 +5,13 @@ if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 
+// Loads Database connection partial
 require '../../App/partials/db.php';
+
+// Check if the username is set in the session
+if (!isset($_SESSION['username'])) {
+    redirect('/login.php'); // Redirect to home page if username is not set
+}
 
 try {
     // Create a PDO instance

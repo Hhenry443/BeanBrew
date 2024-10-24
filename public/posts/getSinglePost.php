@@ -24,7 +24,7 @@ try {
         // Fetch the single post
         $post = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        if (!$product) {
+        if (!$post) {
             $error_message = "Post not found.";
         }
     } else {

@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-
 <?php
 session_start(); // Start the session
 
@@ -10,8 +8,13 @@ require '../helpers.php';
 if (isset($_SESSION['username'])) {
     redirect('/'); // Redirect to home page if username is not set
 }
-?>
 
+// Handle error message
+if (isset($_SESSION['error_message'])) {
+    $error_message = $_SESSION['error_message'];
+    unset($_SESSION['error_message']); // Unset the error message after displaying
+}
+?>
 
 <html>
 
@@ -35,6 +38,12 @@ if (isset($_SESSION['username'])) {
         <!-- Content -->
         <div class="absolute top-0 left-0 right-0 flex flex-col items-center z-10">
             <h1 class="text-3xl font-bold mt-32">Login</h1>
+
+            <?php if (isset($error_message)): ?>
+                <div class="bg-red-500 text-white p-4 rounded-md mt-4">
+                    <?= htmlspecialchars($error_message) ?>
+                </div>
+            <?php endif; ?>
 
             <hr class="border-line-brown border-t-[6px] w-1/2 mt-8">
 

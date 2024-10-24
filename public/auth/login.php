@@ -30,13 +30,14 @@ try {
 
         if (!$user) {
             // User not found
+            $_SESSION["error_message"] = 'Incorrect Credentials';
             redirect('../login.php');
             exit;
         }
 
         // Check if password is correct
         if (!password_verify($password, $user['password'])) {
-            $errors['email'] = "Incorrect credentials password";
+            $_SESSION["error_message"] = 'Incorrect Credentials';
             redirect('../login.php');
             exit;
         }

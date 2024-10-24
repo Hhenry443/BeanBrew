@@ -6,7 +6,7 @@ if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 
-require '../App/partials/db.php';
+require '../../App/partials/db.php';
 
 try {
     // Create a PDO instance
